@@ -80,9 +80,9 @@ int readFile(const char * filename, Data * data) {
   uint8_t buffer[3];
   for (size_t i = 0; i < size_matrix; ++i) {
     if (fread(buffer, sizeof(uint8_t), 3, f) != 3) {
-        fclose(f);
-        freeData(data);
-        return 0;
+      fclose(f);
+      freeData(data);
+      return 0;
     }
     data->A[i] = buffer[0];
     data->B[i] = buffer[1];
